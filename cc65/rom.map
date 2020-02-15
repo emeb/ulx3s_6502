@@ -1,0 +1,196 @@
+Modules list:
+-------------
+main.o:
+    CODE              Offs=000000  Size=000101  Align=00001  Fill=0000
+    RODATA            Offs=000000  Size=000027  Align=00001  Fill=0000
+    BSS               Offs=000000  Size=000028  Align=00001  Fill=0000
+    DATA              Offs=000000  Size=000001  Align=00001  Fill=0000
+acia.o:
+    CODE              Offs=000101  Size=000029  Align=00001  Fill=0000
+    ZEROPAGE          Offs=000000  Size=000002  Align=00001  Fill=0000
+interrupt.o:
+    CODE              Offs=00012A  Size=000024  Align=00001  Fill=0000
+vectors.o:
+    VECTORS           Offs=000000  Size=000006  Align=00001  Fill=0000
+sbc.lib(condes.o):
+    CODE              Offs=00014E  Size=00000C  Align=00001  Fill=0000
+    DATA              Offs=000001  Size=000025  Align=00001  Fill=0000
+    ONCE              Offs=000000  Size=00000C  Align=00001  Fill=0000
+sbc.lib(copydata.o):
+    CODE              Offs=00015A  Size=00002D  Align=00001  Fill=0000
+sbc.lib(crt0.o):
+    STARTUP           Offs=000000  Size=00001C  Align=00001  Fill=0000
+sbc.lib(incsp2.o):
+    CODE              Offs=000187  Size=000015  Align=00001  Fill=0000
+sbc.lib(ldec.o):
+    CODE              Offs=00019C  Size=000015  Align=00001  Fill=0000
+sbc.lib(linc.o):
+    CODE              Offs=0001B1  Size=000011  Align=00001  Fill=0000
+sbc.lib(lsave.o):
+    CODE              Offs=0001C2  Size=00001A  Align=00001  Fill=0000
+sbc.lib(ltest.o):
+    CODE              Offs=0001DC  Size=00000F  Align=00001  Fill=0000
+sbc.lib(pushax.o):
+    CODE              Offs=0001EB  Size=00001A  Align=00001  Fill=0000
+sbc.lib(staspidx.o):
+    CODE              Offs=000205  Size=000016  Align=00001  Fill=0000
+sbc.lib(zerobss.o):
+    CODE              Offs=00021B  Size=000023  Align=00001  Fill=0000
+sbc.lib(zeropage.o):
+    ZEROPAGE          Offs=000002  Size=00001A  Align=00001  Fill=0000
+
+
+Segment list:
+-------------
+Name                   Start     End    Size  Align
+----------------------------------------------------
+ZEROPAGE              000000  00001B  00001C  00001
+DATA                  000200  000225  000026  00001
+BSS                   000226  00024D  000028  00001
+STARTUP               00F026  00F041  00001C  00001
+ONCE                  00F042  00F04D  00000C  00001
+CODE                  00F04E  00F28B  00023E  00001
+RODATA                00F28C  00F2B2  000027  00001
+VECTORS               00FFFA  00FFFF  000006  00001
+
+
+Exports list by name:
+---------------------
+__BSS_RUN__               000226 RLA    __BSS_SIZE__              000028 REA    
+__CONSTRUCTOR_COUNT__     000000 REA    __CONSTRUCTOR_TABLE__     00F042 RLA    
+__DATA_LOAD__             00F000 RLA    __DATA_RUN__              000200 RLA    
+__DATA_SIZE__             000026 REA    __DESTRUCTOR_COUNT__      000000 REA    
+__DESTRUCTOR_TABLE__      00F042 RLA    __RAM_SIZE__              000E00 REA    
+__RAM_START__             000200 RLA    __STARTUP__               000001 REA    
+_acia_rx_chr              00F16D RLA    _acia_tx_chr              00F160 RLA    
+_acia_tx_str              00F14F RLA    _init                     00F026 RLA    
+_irq_int                  00F179 RLA    _main                     00F04E RLA    
+_nmi_int                  00F178 RLA    copydata                  00F1A8 RLA    
+deceaxy                   00F1EA RLA    donelib                   00F19C RLA    
+inceaxy                   00F1FF RLA    incsp2                    00F1DC RLA    
+initlib                   00F042 RLA    ptr1                      00000A RLZ    
+ptr2                      00000C RLZ    ptr4                      000010 RLZ    
+pushax                    00F23D RLA    regsave                   000006 RLZ    
+resteax                   00F21D RLA    saveeax                   00F210 RLA    
+sp                        000002 RLZ    sreg                      000004 RLZ    
+staspidx                  00F253 RLA    tmp1                      000012 RLZ    
+utsteax                   00F22A RLA    zerobss                   00F269 RLA    
+
+
+
+Exports list by value:
+----------------------
+__CONSTRUCTOR_COUNT__     000000 REA    __DESTRUCTOR_COUNT__      000000 REA    
+__STARTUP__               000001 REA    sp                        000002 RLZ    
+sreg                      000004 RLZ    regsave                   000006 RLZ    
+ptr1                      00000A RLZ    ptr2                      00000C RLZ    
+ptr4                      000010 RLZ    tmp1                      000012 RLZ    
+__DATA_SIZE__             000026 REA    __BSS_SIZE__              000028 REA    
+__DATA_RUN__              000200 RLA    __RAM_START__             000200 RLA    
+__BSS_RUN__               000226 RLA    __RAM_SIZE__              000E00 REA    
+__DATA_LOAD__             00F000 RLA    _init                     00F026 RLA    
+__CONSTRUCTOR_TABLE__     00F042 RLA    __DESTRUCTOR_TABLE__      00F042 RLA    
+initlib                   00F042 RLA    _main                     00F04E RLA    
+_acia_tx_str              00F14F RLA    _acia_tx_chr              00F160 RLA    
+_acia_rx_chr              00F16D RLA    _nmi_int                  00F178 RLA    
+_irq_int                  00F179 RLA    donelib                   00F19C RLA    
+copydata                  00F1A8 RLA    incsp2                    00F1DC RLA    
+deceaxy                   00F1EA RLA    inceaxy                   00F1FF RLA    
+saveeax                   00F210 RLA    resteax                   00F21D RLA    
+utsteax                   00F22A RLA    pushax                    00F23D RLA    
+staspidx                  00F253 RLA    zerobss                   00F269 RLA    
+
+
+
+Imports list:
+-------------
+__BSS_RUN__ ([linker generated]):
+    zerobss.o                 common/zerobss.s(8)
+__BSS_SIZE__ ([linker generated]):
+    zerobss.o                 common/zerobss.s(8)
+__CONSTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__CONSTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(18)
+__DATA_LOAD__ ([linker generated]):
+    copydata.o                common/copydata.s(8)
+__DATA_RUN__ ([linker generated]):
+    copydata.o                common/copydata.s(8)
+__DATA_SIZE__ ([linker generated]):
+    copydata.o                common/copydata.s(8)
+__DESTRUCTOR_COUNT__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__DESTRUCTOR_TABLE__ ([linker generated]):
+    condes.o                  runtime/condes.s(19)
+__RAM_SIZE__ ([linker generated]):
+    crt0.o                    crt0.s(11)
+__RAM_START__ ([linker generated]):
+    crt0.o                    crt0.s(11)
+__STARTUP__ (crt0.o):
+    main.o                    main.s(13)
+_acia_rx_chr (acia.o):
+    interrupt.o               interrupt.s(12)
+_acia_tx_chr (acia.o):
+    interrupt.o               interrupt.s(12)
+_acia_tx_str (acia.o):
+    main.o                    main.s(14)
+_init (crt0.o):
+    vectors.o                 vectors.s(7)
+_irq_int (interrupt.o):
+    vectors.o                 vectors.s(8)
+_main (main.o):
+    crt0.o                    crt0.s(8)
+_nmi_int (interrupt.o):
+    vectors.o                 vectors.s(8)
+copydata (copydata.o):
+    crt0.o                    crt0.s(13)
+deceaxy (ldec.o):
+    main.o                    main.s(160)
+donelib (condes.o):
+    crt0.o                    crt0.s(13)
+inceaxy (linc.o):
+    main.o                    main.s(160)
+incsp2 (incsp2.o):
+    staspidx.o                runtime/staspidx.s(8)
+initlib (condes.o):
+    crt0.o                    crt0.s(13)
+ptr1 (zeropage.o):
+    copydata.o                common/copydata.s(9)
+    zerobss.o                 common/zerobss.s(9)
+    staspidx.o                runtime/staspidx.s(9)
+    main.o                    main.s(11)
+ptr2 (zeropage.o):
+    copydata.o                common/copydata.s(9)
+ptr4 (zeropage.o):
+    linc.o                    runtime/linc.s(8)
+pushax (pushax.o):
+    main.o                    main.s(160)
+regsave (zeropage.o):
+    lsave.o                   runtime/lsave.s(9)
+resteax (lsave.o):
+    main.o                    main.s(160)
+saveeax (lsave.o):
+    main.o                    main.s(160)
+sp (zeropage.o):
+    incsp2.o                  runtime/incsp2.s(8)
+    staspidx.o                runtime/staspidx.s(9)
+    pushax.o                  runtime/pushax.s(8)
+    crt0.o                    /home/ericb/build/cc65/cc65/asminc/zeropage.inc(11)
+sreg (zeropage.o):
+    ltest.o                   runtime/ltest.s(8)
+    lsave.o                   runtime/lsave.s(9)
+    linc.o                    runtime/linc.s(8)
+    ldec.o                    runtime/ldec.s(9)
+    main.o                    main.s(10)
+staspidx (staspidx.o):
+    main.o                    main.s(160)
+tmp1 (zeropage.o):
+    copydata.o                common/copydata.s(9)
+    staspidx.o                runtime/staspidx.s(9)
+    ltest.o                   runtime/ltest.s(8)
+    ldec.o                    runtime/ldec.s(9)
+utsteax (ltest.o):
+    main.o                    main.s(160)
+zerobss (zerobss.o):
+    crt0.o                    crt0.s(13)
+
