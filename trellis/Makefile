@@ -51,6 +51,13 @@ $(REAL_HEX):
 prog: $(PROJ).bit
 	$(UJPROG) $<
 	
+prog_term: $(PROJ).bit
+	$(UJPROG) -t -b 9600 $<
+	
+recode:
+	rm -f $(REAL_HEX) $(PROJ).bit
+	$(MAKE) prog
+    
 lint: $(SRC)
 	$(VERILATOR) --lint-only -Wall --top-module $(PROJ) $(TECH_LIB) $(SRC)
 

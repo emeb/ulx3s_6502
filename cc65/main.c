@@ -16,6 +16,12 @@ unsigned long i;
 
 int main()
 {
+	// delay a bit
+	for(i=0;i<10000;i++)
+		x = x + 1;
+	
+	x = 0;
+	
 	// Send startup message
 	acia_tx_str("\n\n\r     ULX3S 6502 cc65 serial test\n\n\r");
 	

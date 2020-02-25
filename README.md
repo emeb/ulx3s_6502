@@ -35,7 +35,7 @@ Then load the previously built bitstream.
 The 8 ULX3S LEDs should begin flashing a binary sequence. If you'd like to try
 the serial port then that can be done with the command
 
-	ujprog -t -b 9600 ulx3s_6502_top.bit
+	make prog_term
 	
 This will load the bitstream and immediately start a 9600 bps terminal session
 where you can type and see characters echoed by the 6502. To exit the terminal
@@ -44,18 +44,31 @@ session just type "<enter>~."
 ## CPU coding
 
 By default the build system fills the ROM with code based on the C and assembly
-source in the cc65 directory. Optionally you can use pure assembly to create
-the ROM with the following commands
+source in the cc65 directory. If you are modifying only the C or assembly code
+then you can do a partial rebuild that changes only the ROM contents which will
+complete somewhat more quickly using the following command:
 
-	make assembly
-	make
+	make recode
 
 within the icestorm directory. 
 
 ## Simulating
 
+Simulation is supported and requires the following prerequisites:
+
+* Icarus Verilog simulator http://iverilog.icarus.com/
+* GTKWave waveform viewer http://gtkwave.sourceforge.net/
+
+To simulate, use the following commands
+
+	cd icarus
+	make
+	make wave
+	
+This will build the simulation executable, run it and then view the output.
+
 ## Thanks
 
 Thanks to the developers of all the tools used for this, as well as the authors
-of the IP cores I snagged for the 6502 and UART. I've added those as submodules
-so you'll know where to get them and who to give credit to.
+of the IP core I snagged for the 6502. I've added that as a submodule
+so you'll know where to get it and who to give credit to.
